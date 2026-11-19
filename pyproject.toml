@@ -1,4 +1,4 @@
-﻿[project]
+[project]
 name = "bg-city-cost-tracker"
 version = "0.1.0"
 description = "Data engineering pipeline tracking city housing, fuel prices, and salary affordability in Bulgaria"
@@ -13,3 +13,4 @@ select = ["E", "F", "I", "UP", "B"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
