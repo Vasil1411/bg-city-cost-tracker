@@ -114,7 +114,16 @@ def save_silver_and_duckdb(
     silver_parquet_path.parent.mkdir(parents=True, exist_ok=True)
     duckdb_path.parent.mkdir(parents=True, exist_ok=True)
 
-    new_df = pl.DataFrame(records).with_columns(
+    schema = {
+        "ingestion_date": pl.Utf8,
+        "city": pl.Utf8,
+        "station_name": pl.Utf8,
+        "fuel_type": pl.Utf8,
+        "raw_fuel_label": pl.Utf8,
+        "price_eur": pl.Float64,
+        "updated_text": pl.Utf8,
+    }
+    new_df = pl.DataFrame(records, schema=schema).with_columns(
         pl.col("ingestion_date").str.to_date()
     )
 

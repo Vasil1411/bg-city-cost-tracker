@@ -9,3 +9,10 @@ venv/
 *.duckdb.wal
 data/bronze/*
 !data/bronze/.gitkeep
+
+data/
+warehouse/
+logs/
+.venv/
+__pycache__/
+*.pyc
